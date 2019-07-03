@@ -1,6 +1,8 @@
 # twirl
 no-hassle write-only tweeting from the command line
 
+[![CircleCI](https://circleci.com/gh/ckampfe/twirl.svg?style=svg)](https://circleci.com/gh/ckampfe/twirl)
+
 ## use
 
 By default Twirl will look for a `.twitter_credentials.json` file
