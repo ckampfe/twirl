@@ -39,8 +39,8 @@ like `$ echo "my great tweet!!!1111" | twirl`
 
 ```
 $ git clone git@github.com:ckampfe/twirl.git
-$ cargo build --release
-$ ln -s ~/code/twirl/target/release/twirl /usr/local/bin # or wherever on your path
+$ cd twirl
+$ cargo install --path . --force
 $ touch ~/.twitter_credentials.json # elsewhere
 # enter your twitter credentials like the ones in .twitter_credentials.json.example
 ```
