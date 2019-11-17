@@ -6,12 +6,12 @@ edition = "2018"
 
 [dependencies]
 dirs = "2.0"
-oauth-client = "0.4.0"
+oauth-client = { git = "https://github.com/ckampfe/oauth-client-rs.git" }
 serde = "1.0"
 serde_derive = "1.0"
 serde_json = "1.0"
 structopt = "0.3"
-twitter-api = "0.4.0"
+twitter-api = { git = "https://github.com/ckampfe/twitter-api-rs.git" }
 
 [profile.release]
 opt-level = 3
