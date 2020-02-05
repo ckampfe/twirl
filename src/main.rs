@@ -26,7 +26,8 @@ struct TwitterCredentials<'a> {
     access_token_secret: &'a str,
 }
 
-fn main() -> Result<(), Box<dyn Error>> {
+#[tokio::main]
+async fn main() -> Result<(), Box<dyn Error>> {
     let options = Options::from_args();
 
     let credentials_location = if let Some(credentials_location) = options.credentials_location {
@@ -54,15 +55,15 @@ fn main() -> Result<(), Box<dyn Error>> {
     };
 
     if tweet.len() <= 280 {
-        match t::update_status(&consumer_token, &access_token, &tweet) {
+        match t::update_status(&consumer_token, &access_token, &tweet).await {
             Ok(_) => Ok(()),
-            Err(err) => Err(Box::new(err.compat())),
+            Err(err) => Err(Box::new(err.compat()) as Box<dyn Error>),
         }
     } else {
         let input_error = io::Error::new(
             io::ErrorKind::InvalidInput,
             "Tweet is longer than 280 characters!",
         );
-        Err(Box::new(input_error))
+        Err(Box::new(input_error) as Box<dyn Error>)
     }
 }
