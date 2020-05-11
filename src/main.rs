@@ -55,15 +55,14 @@ async fn main() -> Result<(), Box<dyn Error>> {
     };
 
     if tweet.len() <= 280 {
-        match t::update_status(&consumer_token, &access_token, &tweet).await {
-            Ok(_) => Ok(()),
-            Err(err) => Err(Box::new(err.compat()) as Box<dyn Error>),
-        }
+        t::update_status(&consumer_token, &access_token, &tweet)
+            .await
+            .map_err(|e| e.into())
     } else {
         let input_error = io::Error::new(
             io::ErrorKind::InvalidInput,
             "Tweet is longer than 280 characters!",
         );
-        Err(Box::new(input_error) as Box<dyn Error>)
+        Err(input_error.into())
     }
 }
