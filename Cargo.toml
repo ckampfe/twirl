@@ -5,7 +5,7 @@ authors = ["Clark Kampfe <clark.kampfe@gmail.com>"]
 edition = "2018"
 
 [dependencies]
-dirs = "2.0"
+dirs = "3.0"
 oauth-client = { git = "https://github.com/ckampfe/oauth-client-rs.git" }
 serde = "1.0"
 serde_derive = "1.0"
