@@ -1,4 +1,3 @@
-use dirs;
 use oauth_client::Token;
 use serde_derive::Deserialize;
 use std::error::Error;
