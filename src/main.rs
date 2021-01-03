@@ -8,7 +8,7 @@ use std::path::PathBuf;
 use structopt::*;
 use twitter_api as t;
 
-#[derive(Clone, Debug, StructOpt)]
+#[derive(StructOpt)]
 #[structopt(name = "twirl")]
 struct Options {
     #[structopt(short = "l", long = "credentials-location", parse(from_str))]
@@ -18,7 +18,7 @@ struct Options {
     tweet: Option<String>,
 }
 
-#[derive(Deserialize, Debug)]
+#[derive(Deserialize)]
 struct TwitterCredentials<'a> {
     consumer_key: &'a str,
     consumer_secret: &'a str,
