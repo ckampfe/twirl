@@ -1472,7 +1472,7 @@ dependencies = [
 [[package]]
 name = "twitter-api"
 version = "0.6.0"
-source = "git+https://github.com/ckampfe/twitter-api-rs.git#42bcf8d27e9cdbf2cab70d2c26019388b09e0939"
+source = "git+https://github.com/ckampfe/twitter-api-rs.git#2520c1537854f5894f8efc31a6eb466b9e2aaedb"
 dependencies = [
  "dirs",
  "failure",
