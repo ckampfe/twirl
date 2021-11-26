@@ -1,5 +1,5 @@
 use oauth_client::Token;
-use serde_derive::Deserialize;
+use serde::Deserialize;
 use std::error::Error;
 use std::io;
 use std::io::Read;
